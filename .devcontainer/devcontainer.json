@@ -1,5 +1,5 @@
 {
-    "name": "Ros2-Control",
+    "name": "ros2_ws_container",
     "build": {
         "dockerfile": "../Dockerfile",
         "context": "..",

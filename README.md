@@ -76,7 +76,7 @@ The Dev Container is configured via two files:
 
 Configures VS Code, build context, and container runtime parameters:
 
-- **Container Name**: `localization_container`
+- **Container Name**: `ros2_ws_container`
 - **Base Image**: `osrf/ros:jazzy-desktop-full`
 - **Workspace Mount**: Local workspace → `/home/$USER/ws`
 - **Extensions**: Pre-installed ROS2 development tools
@@ -159,7 +159,7 @@ ros2 launch <package_name> <launch_file>.py argument:=value
 ## Project Structure
 
 ```
-ros2_control_ws/
+ros2_ws_template/
 ├── .devcontainer/
 │   └── devcontainer.json     # VS Code Dev Container configuration
 ├── src/                       # ROS2 source code
@@ -388,16 +388,4 @@ ros2 topic list
 - [Gazebo Simulation](https://gazebosim.org/)
 - [rqt Framework](https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-RQt.html)
 
----
 
-## License
-
-[Specify your license here]
-
-## Contributing
-
-[Contribution guidelines, if applicable]
-
-## Contact
-
-[Contact information or support resources]
