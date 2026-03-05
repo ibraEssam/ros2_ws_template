@@ -45,7 +45,9 @@
                 "Ranch-Hand-Robotics.rde-pack",
                 "ms-vscode.cmake-tools",
                 "streetsidesoftware.code-spell-checker",
-                "twxs.cmake"
+                "twxs.cmake",
+                "llvm-vs-code-extensions.vscode-clangd",
+                "redhat.vscode-xml"
             ]
         }
     }

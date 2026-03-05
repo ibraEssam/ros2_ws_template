@@ -19,6 +19,8 @@ RUN apt-get update && \
     bash-completion \
     gdb \
     clang-format \
+    clangd \
+    bear \
     python3-pip \
     wget \
     sudo && \
