@@ -14,6 +14,7 @@ A containerized ROS2 development environment using Dev Containers for consistent
 - [GUI Applications](#gui-applications)
 - [GPU Support](#gpu-support)
 - [Troubleshooting](#troubleshooting)
+- [C++ Development Tools](#c++-development-tools)
 - [Resources](#resources)
 
 ## Overview
@@ -367,6 +368,46 @@ The container uses `--network=host` and `--ipc=host` for DDS middleware. Verify 
 ros2 node list
 ros2 topic list
 ```
+
+## C++ Development Tools
+
+### Using Bear and Clangd for Enhanced C++ Support
+
+For improved code intelligence and navigation in C++ ROS2 packages, you can use Bear to generate a `compile_commands.json` file and the Clangd extension for VS Code. Both tools are pre-installed in the Dev Container.
+
+#### Generating compile_commands.json with Bear
+
+Bear is pre-installed and generates `compile_commands.json` by intercepting compiler invocations. To create the compilation database:
+
+```bash
+# Clean previous build
+colcon clean workspace
+
+# Build with Bear to generate compile_commands.json
+bear -- colcon build
+```
+
+This will create a `compile_commands.json` file in the workspace root, which contains information about how each source file is compiled.
+
+#### Using Clangd Extension
+
+The Clangd extension (by LLVM) is pre-installed in the Dev Container and provides C++ language server support in VS Code. It will automatically detect the `compile_commands.json` file and provide features like:
+
+- Code completion
+- Go to definition
+- Find references
+- Hover information
+- Error diagnostics
+
+If the extension doesn't automatically find the file, you can configure the path in VS Code settings:
+
+1. Open Settings (Ctrl+,)
+2. Search for "clangd"
+3. Set "Clangd: Arguments" to include `--compile-commands-dir=/path/to/workspace`
+
+Replace `/path/to/workspace` with your actual workspace path (e.g., `/home/$USER/ws`).
+
+For more information, refer to the [Clangd documentation](https://clangd.llvm.org/).
 
 ## Resources
 
